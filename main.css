@@ -1,0 +1,223 @@
+* {margin: 0; padding: 0; }
+
+
+li {list-style: none; }
+body {font-family: 'Nanum Gothic', sans-serif; width: 100%; height: auto;}
+
+
+/*-------------------------------------드롭다운 메뉴 관련 css-------------------------------------*/
+.logo {margin: 50px 0;  text-align: center;}            
+.info {float: right; font-size: 12px; margin-right: 10px;}
+.topMenu {
+    margin-left: 10%;
+    margin-bottom: 20px;
+    text-align: center;
+    height: 40px;
+    position: relative;
+    /*
+    border: solid 1.5px;
+    border-radius: 10px;*/
+
+}
+.menu01 .menu_mainbar{
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 에스코어 드림 9 Black;
+}
+.dept01 a{
+    text-decoration: none;
+    color: inherit;
+}
+#me1:hover{color: red;}
+#me2:hover{color: red;}
+#me3:hover{color: red;}
+#me4:hover{color: red;}
+.menu01>li {float: left; width: 20%; line-height: 40px; }
+.menu01 span {font-size: 20px; font-weight: bold; }
+.dept01 {
+        box-sizing: border-box;
+        width: 20%;
+        position: absolute;
+        z-index: 2;
+        display: none;
+        background-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.7);
+        border-bottom: 1px solid;
+}
+.dept01 .nop:hover{color: red;}
+.nop {float: none; }
+.menu01:hover .dept01{
+    display: block;
+}
+/*-------------------------------------드롭다운 메뉴 관련 css 끝-------------------------------------*/
+/*-------------------------------------배너 슬라이드 관련-------------------------------------*/
+
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  padding-top: 40px;
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+#abcd {
+  width: 100%;
+  height: 350px;
+  background-image: linear-gradient( rgba(131, 131, 131, 0.8),
+  rgba(145, 145, 145, 0.8)), url('4ecacdffeff021 (2) (1).png') ;
+  background-color: #888888;
+}
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active {
+  background-color: #ff0000;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+/*---------------------------슬라이드 배너 끝 부분---------------------------------------*/
+/*-------------------------------------h2-------------------------------------*/
+.section{
+  background-color: #ffffff;
+  padding: 60px 0 0 0;
+}
+
+.section .h2{
+  position: relative;
+}
+.section .h2 h2{
+  text-align: center;
+  font-size: 40px;
+  font-family: font_sw, sans-serif;
+  padding: 17px 0 0 25px;
+}
+/*-------------------------------------h2-------------------------------------*/
+/*         이달의 추천 메뉴                      */
+.todaymenu{
+  width: 100%;
+  height: 400px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 200px;
+}
+.todaymenu_text{
+  margin-top: 20px;
+  display: inline-block;
+}
+.todaymenu_text p{
+  margin-top: 10px;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(41, 41, 41);
+  text-shadow: 3px 3px 5px #a0a0a0;
+
+}
+.todaymenu_text img{
+  width: 400px;
+}
+.todaymenu_img img{
+  width: 500px;
+  margin: 20px;
+}
+#today_button{
+  border: none;
+  margin-top: 10px;
+  padding: 10px 20px 10px 20px;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 20px;
+}
+#today_button:hover{
+  background-color: red;
+  border: none;
+  color: white;
+  transition: all .7s;
+}
+/*         이달의 추천 메뉴 끝*/
+
+.history{
+  text-align: center;
+  margin-top: 20px;
+  width: 100%;
+  height: 1030px;
+  background-image: linear-gradient( rgba(151, 151, 151, 0.8),
+  rgba(151, 151, 151, 0.8)), url('1481689236195037.jpg') ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.history_con{
+  width: 100%;
+}
+.history_div{
+  display: inline-block;
+  
+  font-size: 25px;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  width: 34%;
+  height: 300px;
+  overflow:hidden;
+}
+.history img{
+  width: 30%;
+  width: 400px;
+  height: 300px;
+}
+.history h2{
+  margin-bottom: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 60px;
+}
+.loca{
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+}
+.loca h1{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 40px;
+}
+.footer {
+    bottom: 0;
+    padding: 22px 0;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    background: rgb(160, 160, 160);
+}

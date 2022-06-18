@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>도스마스</title>
+<style>
+    @import url(main.css);
+</style>
+<script >
+    src="jquery-3.6.0.min.js"
+    src="mainjs.js"
+</script>
+</head>
+<body>
+    <header>
+       
+    </header>
+    <!-- -->
+    <nav>
+         <!-- -->
+       
+        <div class="logo">
+            <img src="dosmas_logo.png">
+            <span class="info">회원가입</span>
+            <span class="info"> | </span>
+            <span class="info">login</span>
+        </div>
+        
+        <div class="topMenu">
+            <ul class="menu01">
+                <li><a href="" id="me1">도 스 마 스</a> 
+                    <div >
+                        <ul class="dept01">
+                            <li class="nop">도스마스 소개</li>
+                            <li class="nop">전화문의</li>
+                            <li class="nop">매장위치</li>
+                        </ul>
+                     </div>
+                </li>
+                <li><a href="" id="me2">주 문 하 기</a>
+                    <div >
+                    <ul class="dept01">
+                        <li class="nop">포장주문</li>
+                        <li class="nop" style="visibility:hidden;" > a</li>
+                        <li class="nop"style="visibility:hidden;"> a</li>
+                    </ul>
+                </div>
+                </li>
+                <li><a href="" id="me3">커 뮤 니 티</a>
+                    <div >
+                    <ul class="dept01">
+                        <li class="nop">공지사항</li>
+                        <li class="nop">이벤트</li>
+                        <li class="nop"style="visibility:hidden;">a</li>
+                    </ul>
+                </div>
+                </li>
+                <li><a href="" id="me4">회 원 정 보</a>
+                    <div >
+                    <ul class="dept01">
+                        <li class="nop">정보수정</li>
+                        <li class="nop">접수번호확인</li>
+                        <li class="nop"style="visibility:hidden;">a</li>
+                    </ul>
+                </div>
+                </li>
+            </ul>
+        </div>
+        <div class="none">
+        </div>
+    
+    </nav>
+    <div id="abcd">
+    <div class="slideshow-container" style="width: 500px;">
+        <div class="mySlides fade">
+            <img src="img_Chang_20190902(1).png" style="width:100%">
+        </div>
+            
+        <div class="mySlides fade">
+            <img src="burrito2.PNG" style="width:100%">
+        </div>
+            
+        <div class="mySlides fade">
+            <img src="burrito.PNG" style="width:100%">
+        </div>
+            
+        </div>
+        <div style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+        </div>
+    </div>
+            <script>
+                var slideIndex = 0;
+                showSlides();
+                
+                function showSlides() {
+                  var i;
+                  var slides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("dot");
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                  }
+                  slideIndex++;
+                  if (slideIndex > slides.length) {slideIndex = 1}    
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                  setTimeout(showSlides, 2000); // Change image every 2 seconds
+                }
+                </script>
+    <!-- -->
+    <div class="section">
+        <div class="h2">
+          <h2>이달의 추천 메뉴</h2>
+        </div>
+    </div>
+    <div class="todaymenu">
+        <div class="todaymenu_text">
+            <img src="beefburito.png" >
+            <img src="12020741_1.jpg" style="width: 300px; height: 300px;">
+            <br>
+            <p style="text-align: left; font-size: 20px;">
+                소고기 브리또
+                <br>소고기의 본연의 맛을<br>
+                느낄수 있는 인기메뉴
+            </p>
+            <button id="today_button">주문하기 &nbsp;  ㅡ></button>
+        </div>
+    </div>
+    <div>
+        <h3>도스마스의 역사</h3>
+    </div>
+    <div>
+        <h3>부리또란?</h3>
+    </div>
+    <footer id="footer">
+        <div>
+            &nbsp; 공지사항    |   이용약관    |   개인정보취급방침<br>
+            강원도 춘천시 백령로 25번길 2 1층   |   t.033-252-4416
+        </div>
+    </footer>
+</body>
+</html>

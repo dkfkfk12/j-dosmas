@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할인 및 이벤트</title>
+    <style>
+            .options:hover{
+        color: white;
+        font-weight: bold;
+    }
+            .navContainer{
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100px;
+        margin: 0;
+        padding: 0;
+        background-color: gray;
+        list-style-type: none;
+    }
+    </style>
+</head>
+<body>
+    <div>
+        <img src = "diglett.png" width: 20px; height: 20px; border: 1px solid red; float:left; margin-left: 40px; margin-right: 20px; id = "knu" onclick="clickPic(knu)">
+    </div>
+
+    <div style="width: 10px; height: 10px; border: 1px solid red; float:left; ">
+        <img src = "pikachu.png" id = "mexican" >
+    </div>
+    <!-- 자바스크립트 if 강원대생 그림 누르면- 가격 * 0.9 / else if 멕시코인 할인 - 가격 * 0.85 
+    else if 가정의 달 이벤트 - 500ml 콜라 하나 -->
+    <nav class="navContainer">
+        &emsp; &emsp;  &emsp; &emsp;  &emsp; &emsp;  &emsp; &emsp;  &emsp; &emsp; &emsp; &emsp;  &emsp; &emsp;  &emsp; &emsp;  &emsp; &emsp; <a herf = "" class = "options">메뉴 선택</a> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; 
+        <a herf = "" class = "options"style="color:red ; font-weight:bold">할인 및 이벤트</a> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; 
+        <a herf = "" class = "options">주문접수 완료</a>
+    </nav>
+    <script>
+        function clickPic()
+        //cost를 전역변수로 두고싶은데 음
+        {   var cost = 10000;
+            var pic = document.getElementById("knu");
+            
+            alert(pic.src);
+            if (pic.src == "") {
+                cost = cost * 0.9;
+            }
+            else if (pic.src == "media/hs") 
+            {
+                cost = cost * 0.85;
+            }
+            else addCoke();
+            alert(cost);
+        }
+        function addCoke()
+        {
+            var coke = "콜라 서비스가 추가되었습니다";
+            return coke;
+        }
+    </script>
+</body>
+</html>

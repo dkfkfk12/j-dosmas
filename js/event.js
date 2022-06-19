@@ -21,7 +21,7 @@ function gomove(target){
     }
 }
 function goHome(){
-    location.href = "/index.html";
+    location.href = "index.html";
 }
 function goOder(){
     location.href = "project_f(last).html";

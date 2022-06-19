@@ -1,0 +1,181 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="order" content="order number">
+    <title>주문접수번호</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        div#grid {
+            border: 2px solid coral;
+            position: top;
+            padding: 50px;
+            width: 500px;
+            height: 500px;
+        }
+
+        div.category {
+            text-align: left;
+            font-size: medium;
+        }
+
+        div.subCategory {
+            text-align: center;
+            font-size: smaller;
+        }
+
+        h2 {
+            font-size: 2em;
+            text-align: center;
+        }
+
+        p#orderNum {
+            font-size: 1em;
+            text-align: center;
+        }
+
+        .solid {
+            border-style: solid;
+        }
+
+        .today_button {
+            border: none;
+            bottom: 0;
+            margin-top: 10px;
+            padding: 10px 20px 10px 20px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .today_button:hover {
+            background-color: skyblue;
+            border: none;
+            color: white;
+            transition: all .7s;
+        }
+        #right_{
+            float: right;
+        }
+    </style>
+    <script>
+        //주문접수표를 받아들이는 
+        //script 작성
+        function order() {
+            //메뉴 id관련 innerHtml
+            if (parseInt(localStorage.getItem("burito_c")) == 4500) {
+                document.getElementById("burito").innerHTML = "믹스 브리또 : " + localStorage.getItem("burito_c");
+            } else if (parseInt(localStorage.getItem("burito_c")) == 4300) {
+                document.getElementById("burito").innerHTML = "비프 브리또 : " + localStorage.getItem("burito_c");
+            } else if (parseInt(localStorage.getItem("burito_c")) == 4200) {
+                document.getElementById("burito").innerHTML = "치킨 브리또 : " + localStorage.getItem("burito_c");
+            }
+            if (parseInt(localStorage.getItem("drink_c")) == 1000) {
+                document.getElementById("drink").innerHTML = "500ml 콜라 : " + localStorage.getItem("drink_c");
+            } else if (parseInt(localStorage.getItem("drink_c")) == 1800) {
+                document.getElementById("drink").innerHTML = "1.25L 콜라 : " + localStorage.getItem("drink_c");
+            } else if (parseInt(localStorage.getItem("drink_c")) == 2000) {
+                document.getElementById("drink").innerHTML = "1.25L 사이다 : " + localStorage.getItem("drink_c");
+            }
+            if (parseInt(localStorage.getItem("fries_c")) == 2000) {
+                document.getElementById("fries").innerHTML = "감자튀김 : " + localStorage.getItem("fries_c");
+            } else {
+                document.getElementById("fries").innerHTML = "감자튀김 없음";
+            }
+            if (parseInt(localStorage.getItem("etc_c")) == 2500) {
+                document.getElementById("etc").innerHTML = "소떡소떡 : " + localStorage.getItem("etc_c");
+            } else if (parseInt(localStorage.getItem("etc_c")) == 2000) {
+                document.getElementById("etc").innerHTML = "새우튀김 : " + localStorage.getItem("etc_c");
+            } else if (parseInt(localStorage.getItem("etc_c")) == 1800) {
+                document.getElementById("etc").innerHTML = "치즈스틱 : " + localStorage.getItem("etc_c");
+            }
+            //할인 관련 id 관련 innerHtml
+            document.getElementById("event").innerHTML = localStorage.getItem("event");
+            if (parseInt(localStorage.getItem("event")) == 1) {
+                document.getElementById("event").innerHTML = "강원대생 할인"
+                var sale = 10;
+            } else if (parseInt(localStorage.getItem("event")) == 2) {
+                document.getElementById("event").innerHTML = "멕시코인 할인"
+                var sale = 15;
+            } else if (parseInt(localStorage.getItem("event")) == 3) {
+                document.getElementById("event").innerHTML = "가정의 달 콜라 증정"
+            }
+            //결제금액 id 관련 innerHtml
+            var price = parseInt(localStorage.getItem("burito_c")) + parseInt(localStorage.getItem("drink_c")) + parseInt(localStorage.getItem("fries_c")) + parseInt(localStorage.getItem("etc_c"));
+
+
+            var fixedPrice = price * ((100 - sale) * 0.01);
+            document.getElementById("price").innerHTML = price;
+            document.getElementById("sale").innerHTML = "- 할인 " + sale + "% (" + (price + "원)");
+            document.getElementById("fixedPrice").innerHTML = fixedPrice;
+            //고객 전화번호 id관련 innerHtml
+            if (localStorage.getItem("pon").length==11) {
+                document.getElementById("phoneNumber").innerHTML = localStorage.getItem("pon");
+            }
+        }
+        function order_cancel(){
+            alert("주문이 취소되었습니다.");
+            opener.location.href = "index.html";
+            window.localStorage.clear();
+            self.close();
+        }
+        function order_close(){
+            alert("주문완료 되었습니다.");
+            opener.location.href = "index.html";
+            self.close();
+            
+        }
+    </script>
+</head>
+
+<body onload="order()">
+    <div id="grid">
+        <h2>접수번호</h2>
+        <p id="orderNum">01</p>
+        <hr>
+        <div class="category">
+            <span>메뉴:</span>
+            <div class="subCategory">
+                <span id="burito">burito</span><br>
+                <span id="drink">drink</span><br>
+                <span id="fries">fries</span><br>
+                <span id="etc">etc</span><br>
+            </div>
+        </div>
+        <p></p>
+        <div class="category">
+            <span>할인 및 이벤트:</span>
+            <div class="subCategory">
+                <span id="event">event</span><br><br>
+            </div>
+        </div>
+        <div class="category">
+            <span>결제금액:</span>
+            <div class="subCategory">
+                <span id="price">n원</span><br>
+                <span id="sale">-할인x%(n*x/100원)</span><br>
+                <span>------------------</span><br>
+                <span id="fixedPrice">k원</span><br>
+            </div>
+        </div>
+        <div class="category">
+            <span>전화번호:</span>
+            <div class="subCategory">
+                <span id="phoneNumber">phoneNumber</span><br>
+            </div>
+        </div>
+        <button class="today_button" type="button" onclick="order_cancel()">주문취소</button>
+        <button class="today_button" id="right_" type="button" onclick="order_close()">주문완료</button>
+    </div>
+
+
+
+</body>
+
+</html>

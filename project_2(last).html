@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할인 및 이벤트</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/event.js"></script>
+
+    <style>
+        .options:hover {
+            color: white;
+            font-weight: bold;
+        }
+
+        .navContainer {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            width: 100%;
+            height: 100px;
+            background-color: gray;
+            list-style-type: none;
+        }
+
+        .event_con {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+            margin-top: 100px;
+            margin-bottom: 72px;
+        }
+
+        .event {
+            width: 33%;
+            text-align: center;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 드롭바 -->
+    <div class="logo">
+        <img src="/media/도스마스_로고.png" onclick="goHome()">
+        <span class="info">회원가입</span>
+        <span class="info"> | </span>
+        <span class="info">login</span>
+    </div>
+    <div class="topMenu">
+        <ul class="menu01">
+            <li><a class="menu_mainbar" id="me1">도 스 마 스</a>
+                <!-- 링크 나중에 선배가 만든 메인 화면 주소로 바꾸기 -->
+                <div>
+                    <ul class="dept01">
+                        <li class="nop"><a href="#none" onclick="gomove('#hist')">도스마스소개</a></li>
+                        <li class="nop"><a href="#none" onclick="gomove('#hist')">전화문의</a></li>
+                        <li class="nop"><a href="#none" onclick="gomove('#hist')">매장위치</a></li>
+                    </ul>
+                </div>
+            </li>
+            <!--현재 페이지 주소-->
+            <li><a class="menu_mainbar" id="me2">주 문 하 기</a>
+                <div>
+                    <ul class="dept01">
+                        <li class="nop"><a href="project_f(last).html">포장주문</a></li>
+                        <li class="nop" style="visibility:hidden;"> a</li>
+                        <li class="nop" style="visibility:hidden;"> a</li>
+                    </ul>
+                </div>
+            </li>
+            <li><a class="menu_mainbar" id="me3">커 뮤 니 티</a>
+                <div>
+                    <ul class="dept01">
+                        <li class="nop"><a href="#none" onclick="openPopup()">공지사항</a></li>
+                        <li class="nop"><a href="#none" onclick="openPopup()">이벤트</a></li>
+                        <li class="nop" style="visibility:hidden;">a</li>
+                    </ul>
+                </div>
+            </li>
+            <li><a class="menu_mainbar" id="me4">회 원 정 보</a>
+                <div>
+                    <ul class="dept01">
+                        <li class="nop"><a href="#none" onclick="openOrder_check()">접수번호확인</a></li>
+                        <li class="nop" style="visibility:hidden;">a</li>
+                        <li class="nop" style="visibility:hidden;">a</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="none">
+    </div>
+    <!--
+    <div style="width: 10px; height: 10px; border: 1px solid red; float:left; ">
+        <img src = "" id = "mexican" >
+    </div>-->
+    <!-- 자바스크립트 if 강원대생 그림 누르면- 가격 * 0.9 / else if 멕시코인 할인 - 가격 * 0.85 
+    else if 가정의 달 이벤트 - 500ml 콜라 하나 -->
+
+    <div class="event_con">
+        <div class="event" style="margin-left: auto;">
+            <img src="/media/강대할인.png" width="200px" height="200px" id="knu" onclick="knu_f()">
+            <h4 class="knu">강원대생 할인</h4>
+        </div>
+        <div class="event">
+            <img src="/media/mexican.jpg" width="200px" height="200px" id="mexican" onclick="mexican_f()">
+            <h4 class="mexican">멕시코인 할인</h4>
+        </div>
+        <div class="event" style="margin-right: auto;">
+            <img src="/media/may.jpg" width="200px" height="200px" id="may" onclick="may_f()">
+            <h4 class="may">가정의 달 콜라 증정</h4>
+        </div>
+    </div>
+
+    <script>
+        //이것도 다음 주문접수 완료로 넘기기 위한 스크립트
+        function gotwo(url) {
+            window.location.href = url + window.location.search;
+        }
+        function knu_f() {
+            var pon = prompt("주문확인을 위해 핸드폰번호를 입력하세요.");
+            localStorage.setItem('pon', pon);
+            if (localStorage.getItem('pon').length < 11) {
+                alert("전화번호 입력 오류입니다.");
+            } else if (localStorage.getItem('pon').length > 11) {
+                alert("전화번호 입력 오류입니다.");
+            }
+            else {
+                localStorage.setItem('event', 1);
+                var cost_e = parseInt(localStorage.getItem('cost'));
+                cost_e = cost_e * 0.9;
+                localStorage.setItem('cost', cost_e);
+                window.open("order.html", 'popup-test', 'width=650, height=650');
+            }
+        }
+        function mexican_f() {
+            var pon = prompt("주문확인을 위해 핸드폰번호를 입력하세요.");
+            localStorage.setItem('pon', pon);
+            if (localStorage.getItem('pon').length < 11) {
+                alert("전화번호 입력 오류입니다.");
+            } else if (localStorage.getItem('pon').length > 11) {
+                alert("전화번호 입력 오류입니다.");
+            }
+            else {
+                localStorage.setItem('event', 2);
+                var cost_e = parseInt(localStorage.getItem('cost'));
+                cost_e = cost_e * 0.85;
+                localStorage.setItem('cost', cost_e);
+                window.open("order.html", 'popup-test', 'width=650, height=650');
+            }
+        }
+        function may_f() {
+            localStorage.setItem('event', 3);
+            var cost_e = parseInt(localStorage.getItem('cost'));
+            cost_e = cost_e * 0.9;
+        }   
+    </script>
+    <div class="navContainer">
+        <a herf="project_f(last).html" class="options">메뉴 선택</a>
+        <a herf="" class="options" style="color:red ; font-weight:bold">할인 및 이벤트</a>
+        <a herf="order.html" class="options">주문접수 완료</a>
+    </div>
+</body>
+
+</html>

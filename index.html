@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>도스마스</title>
+    <style>
+        @import url(css/main.css);
+    </style>
+    <script type="text/javascript" src = "js/event.js">
+        
+        src = "js/jquery-3.6.0.min.js"
+        src = "js/mainjs.js"
+    </script>
+</head>
+
+<body>
+    <nav>
+         <!-- -->
+       
+        <div class="logo">
+            <img src="image/dosmas_logo.png" onclick="goHome()">
+            <span class="info">회원가입</span>
+            <span class="info"> | </span>
+            <span class="info">login</span>
+        </div>
+        
+        <div class="topMenu">
+            <ul class="menu01">
+                <li><a href="#hist" class="menu_mainbar" id="me1">도 스 마 스</a> 
+                    <div >
+                        <ul class="dept01">
+                            <li class="nop"><a href="#hist">도스마스 소개</a></li>
+                            <li class="nop"><a href="#local">매장위치</a></li>
+                            <li class="nop"><a href="#foot">전화문의</a></li>
+                        </ul>
+                     </div>
+                </li>
+                <li><a id="me2" class="menu_mainbar" >주 문 하 기</a>
+                    <div >
+                    <ul class="dept01">
+                        <li class="nop" ><a href="project_f(last).html"> 포장주문</a></li>
+                        <li class="nop" style="visibility:hidden;" > a</li>
+                        <li class="nop"style="visibility:hidden;"> a</li>
+                    </ul>
+                </div>
+                </li>
+                <li><a class="menu_mainbar" id="me3">커 뮤 니 티</a>
+                    <div >
+                    <ul class="dept01">
+                        <li class="nop">공지사항</li>
+                        <li class="nop"><a href="" onclick="openPopup()">이벤트</a></li>
+                        <li class="nop"style="visibility:hidden;">a</li>
+                    </ul>
+                </div>
+                </li>
+                <li><a class="menu_mainbar" id="me4">회 원 정 보</a>
+                    <div >
+                    <ul class="dept01">
+                        <li class="nop"><a href="#none" onclick="openOrder_check()">접수번호확인</a></li>
+                        <li class="nop" style="visibility:hidden;">a</li>
+                        <li class="nop"style="visibility:hidden;">a</li>
+                    </ul>
+                </div>
+                </li>
+            </ul>
+        </div>
+        <div class="none">
+        </div>
+    </nav>
+
+    <div id="abcd">
+        <div class="slideshow-container" style="width: 500px;">
+            <div class="mySlides fade">
+                <img src="image/img_Chang_2019090234.png" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="image/burrito2.PNG" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="image/burrito.PNG" style="width:100%">
+            </div>
+        </div>
+
+        <div style="text-align:center">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+        </div>
+    </div>
+            <script>
+                var slideIndex = 0;
+                showSlides();
+                
+                function showSlides() {
+                  var i;
+                  var slides = document.getElementsByClassName("mySlides");
+                  var dots = document.getElementsByClassName("dot");
+                  for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                  }
+                  slideIndex++;
+                  if (slideIndex > slides.length) {slideIndex = 1}    
+                  for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                  }
+                  slides[slideIndex-1].style.display = "block";  
+                  dots[slideIndex-1].className += " active";
+                  setTimeout(showSlides, 2000); // Change image every 2 seconds
+                }
+                </script>
+    <!-- -->
+    <div class="section">
+        <div class="h2">
+          <h2>이달의 추천 메뉴</h2>
+        </div>
+    </div>
+
+    <div class="todaymenu">
+        <div class="todaymenu_text">
+            <img src="image/무제(1).png" >
+            <img src="image/20220224020308.jpg" style="width: 400px; height: 300px;">
+            <br>
+            <p>
+                소고기 부리토 감자튀김 세트
+                <br>소고기의 본연의 맛과 감자튀김의<br>
+                짭짤한 느낄수 있는 인기메뉴
+            </p>
+            <button type="button" id="today_button" onclick='goOder()'>주문하기 &nbsp;  ㅡ></button>
+        </div>
+    </div>
+
+    <div class="history" id="hist">
+        <h2>DOSMAS <span style="color: red;">STORY</span></h2>
+        <div class="history_con">
+            <div class="history_div">
+                <img src="image/foodtruck.png" />
+            </div>
+    
+            <div class="history_div" width="300px" height="300px">
+                아메리칸 드림을 꿈꾸던 도스마스의 안성회 대표는<br>
+                미국에서 순두부 찌개 집을 운영하던 중,<br>
+                서브프라임 모기지 사태를 기점으로 가게 문을 닫게 되었다.<br>
+                취업도 어려웠던 탓에, 한국으로 귀국을 결정한다.<br>
+                그리고 안성회는 지인의 돈 1000만원을 빌려<br>
+                차량에 장비를 싣고 노점 창업을 시작하게 되었다.<br>
+            </div>
+        </div>
+        <div class="history_con">
+            <div class="history_div">
+                사업 아이템은 미국에서 자주 먹었던 부리토였다.<br>
+                한 달 준비하고 무작정 수원역 앞으로 가서 장사를 시작했지만,<br>
+                여러 사정 탓에 제대로 장사를 하지못했다.<br>
+                미국에서 먹던 부리토가 한국인의 입맛에 맞지 않는<br>
+                것도 문제였다. 고민 끝에 향신료를 빼고 한국인의 입맛에<br>
+                맞게 메뉴를 조정하였다. 즉 현지화에 성공한 것이다.
+            </div>
+            <div class="history_div">
+                <img src="image/bbbbimg.jpg" />
+            </div>
+            </div>
+            <div class="history_con">
+                <div class="history_div">
+                    <img src="image/dosmas.jpg" />
+                </div>
+                <div class="history_div">
+                    이후 남이섬에서 푸드트럭를 하며 입소문이 나기 시작했고,<br>
+                    노점 장사를 시작한지 6개월 만에 한양대학교 에리카 캠퍼스<br>
+                    앞에 첫 점포를 열게 되었다. 간편하게 식사를 해결할 수 있으면서도<br>
+                    저렴한 가격, 이색적인 맛이 대학생의 입맛을 사로잡았다.<br>
+                    당시 한양대 에리카 캠퍼스 앞에는 부리또처럼 간편식으로 먹을 수 있는<br>
+                    음식점이 '쏘킹'이라는 핫도그 집 밖에 없었다.<br>
+            
+                </div>
+            </div>
+        </div>
+    <div class="loca" id="local">
+        <h1>매장위치</h1>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d787.4333494402148!2d127.73726566621417!3d37.8665280555578!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3562e5ccf8124b69%3A0x91bfc404502b9d86!2z6rCV7JuQ64yA7KCV66y4!5e0!3m2!1sko!2skr!4v1654580871139!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+    </div>
+   
+    <div class="footer" id="foot">
+        &nbsp; 공지사항    |   이용약관    |   개인정보취급방침<br>
+        강원도 춘천시 백령로 25번길 2 1층   |   t.033-252-4416
+    </div>
+
+</body>
+
+</html>

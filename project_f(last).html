@@ -116,17 +116,9 @@
     </style>
 </head>
 <body>
-    <!--
-    <header>
-        <img src = "./media/도스마스_로고.png" id = "dosmas">
-    </header>
-    -->
-    <!-- -->
     <nav>
-        <!-- -->
-      
        <div class="logo">
-           <img src="./media/도스마스_로고.png" onclick="goHome()">
+           <img src="media/도스마스_로고.png" onclick="goHome()">
            <span class="info">회원가입</span>
            <span class="info"> | </span>
            <span class="info">login</span>
@@ -187,7 +179,7 @@
     <!--메뉴 셀렉트-->
     <section>
         <div>
-            <img id="burito_img" src="./media/lolologo.jpg" style="width: 200px; margin-bottom: 3%;">
+            <img id="burito_img" src="media/lolologo.jpg" style="width: 200px; margin-bottom: 3%;">
             <select name = "burito" id = "burito" onclick="imgChange_buri()">
                 <option disabled selected>부리또 🌯</option>
                 <option value="1">믹스 부리또</option>
@@ -198,7 +190,7 @@
 
 
         <div>
-            <img id="drink_img" src="./media/lolologo.jpg" style="width: 200px; margin-bottom: 3%;">
+            <img id="drink_img" src="media/lolologo.jpg" style="width: 200px; margin-bottom: 3%;">
                 <select name = "drink" id = "drink" onclick="imgChange_drink()">
                     <option disabled selected>음료 🥤</option>
                     <option value="1">500ml 콜라</option>
@@ -207,14 +199,14 @@
             </select>
         </div>
         <div>
-            <img id="fry_img" src="./media/lolologo.jpg" style="width: 200px; margin-bottom: 3%;">
+            <img id="fry_img" src="media/lolologo.jpg" style="width: 200px; margin-bottom: 3%;">
             <select name = "fries" id = "fries" onclick="imgChange_fries()">
                 <option disabled selected>감자튀김 🍟</option>
                 <option value="1">감자튀김 단품</option>
             </select>
         </div>
         <div>
-            <img id="side_img" src="./media/lolologo.jpg" style="width: 200px; margin-bottom: 3%;">
+            <img id="side_img" src="media/lolologo.jpg" style="width: 200px; margin-bottom: 3%;">
             <select name = "etc" id = "etc" onclick="imgChange_side()">
                 <option disabled selected>사이드 🍤</option>
                 <option value="1">소떡소떡</option>  
@@ -266,18 +258,18 @@
         var buri = sel.options[sel.selectedIndex].value // 그 부리또 셀렉션의 value값을 buri에 저장
         var buri_img = document.getElementById("burito_img");   //이거 드링크 이미지 만들어서 ""안에 값 변경
         if(buri==1){                                     //buri로 선택된 값이 1이면 이미지를 1에 맞게 변경해줌
-            buri_img.src="./media/mix_burito.jpeg"
+            buri_img.src="media/mix_burito.jpeg"
             localStorage.setItem('burito_c', 4500);
             localStorage.setItem('cost', 4500);
         }
         else if(buri==2){                                //부리가 2면 이미지를 2에 맞게 변경
-            buri_img.src="./media/chicken_burito.jpg";
+            buri_img.src="media/chicken_burito.jpg";
             
             localStorage.setItem('burito_c', 4200);
             localStorage.setItem('cost', 4200);
         }
         else if(buri==3){
-            buri_img.src="/media/beef_burito.jpg";
+            buri_img.src="media/beef_burito.jpg";
             
             localStorage.setItem('burito_c', 4300);
             localStorage.setItem('cost', 4300);
@@ -290,7 +282,7 @@
         var drink = sel.options[sel.selectedIndex].value // 그 부리또 셀렉션의 value값을 buri에 저장
         var drink_img = document.getElementById("drink_img");
         if(drink==1){                                     //buri로 선택된 값이 1이면 이미지를 1에 맞게 변경해줌
-            drink_img.src="/media/500Coke.jpg";
+            drink_img.src="media/500Coke.jpg";
             var cost_e = parseInt(localStorage.getItem('cost'));
             cost_e = cost_e+1000;
             localStorage.setItem('cost', cost_e);
@@ -298,7 +290,7 @@
             localStorage.setItem('drink_c', 1000);
         }
         else if(drink==2){                                //부리가 2면 이미지를 2에 맞게 변경
-            drink_img.src="/media/125Coke.jpg";
+            drink_img.src="media/125Coke.jpg";
             var cost_e = parseInt(localStorage.getItem('cost'));
             cost_e = cost_e+2000;
             localStorage.setItem('cost', cost_e);
@@ -306,7 +298,7 @@
             localStorage.setItem('drink_c', 2000);
         }
         else if(drink==3){
-            drink_img.src="/media/125Cider.jpg";
+            drink_img.src="media/125Cider.jpg";
             var cost_e = parseInt(localStorage.getItem('cost'));
             cost_e = cost_e+1800;
 
@@ -320,7 +312,7 @@
         var fries = sel.options[sel.selectedIndex].value;
         var fryImg = document.getElementById("fry_img");
         if(fries==1){
-            fryImg.src = "/media/fries.jpg";
+            fryImg.src = "media/fries.jpg";
             var cost_e = parseInt(localStorage.getItem('cost'));
             cost_e = cost_e+2000;
             localStorage.setItem('cost', cost_e);
@@ -334,7 +326,7 @@
         var side = sel.options[sel.selectedIndex].value // 그 부리또 셀렉션의 value값을 buri에 저장
         var side_img = document.getElementById("side_img");   //이거 이미지 에 맞겨 변경
         if(side==1){                                     //buri로 선택된 값이 1이면 이미지를 1에 맞게 변경해줌
-            side_img.src="/media/sausage.jpg";
+            side_img.src="media/sausage.jpg";
             var cost_e = parseInt(localStorage.getItem('cost'));
             cost_e = cost_e+2500;
             localStorage.setItem('cost', cost_e);
@@ -342,7 +334,7 @@
             localStorage.setItem('etc_c', 2500);
         }
         else if(side==2){                                //부리가 2면 이미지를 2에 맞게 변경
-            side_img.src="/media/ebi.png";
+            side_img.src="media/ebi.png";
             var cost_e = parseInt(localStorage.getItem('cost'));
             cost_e = cost_e+2000;
             localStorage.setItem('cost', cost_e);
@@ -350,7 +342,7 @@
             localStorage.setItem('etc_c', 2000);
         }
         else if(side==3){
-            side_img.src="/media/cheese.jpeg";
+            side_img.src="media/cheese.jpeg";
             var cost_e = parseInt(localStorage.getItem('cost'));
             cost_e = cost_e+2000;
             localStorage.setItem('cost', cost_e);

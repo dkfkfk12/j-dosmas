@@ -120,8 +120,9 @@
 
 
             var fixedPrice = price * ((100 - sale) * 0.01);
+            var data = price-fixedPrice;
             document.getElementById("price").innerHTML = price;
-            document.getElementById("sale").innerHTML = "- 할인 " + sale + "% (" + (price + "원)");
+            document.getElementById("sale").innerHTML = "- 할인 " + sale + "% (" + data + "원)";
             document.getElementById("fixedPrice").innerHTML = fixedPrice;
             //고객 전화번호 id관련 innerHtml
             if (localStorage.getItem("pon").length==11) {

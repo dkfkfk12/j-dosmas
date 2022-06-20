@@ -40,13 +40,23 @@
             text-align: center;
             display: inline-block;
         }
+        .event img{
+            cursor: pointer;
+        }
+        #text{
+            margin-top: 5.85%;
+            text-align: center;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+        }
     </style>
 </head>
 
 <body>
     <!-- 드롭바 -->
     <div class="logo">
-        <img src="./media/도스마스_로고.png" onclick="goHome()">
+        <img src="/media/도스마스_로고.png" onclick="goHome()">
         <span class="info">회원가입</span>
         <span class="info"> | </span>
         <span class="info">login</span>
@@ -101,18 +111,20 @@
     </div>-->
     <!-- 자바스크립트 if 강원대생 그림 누르면- 가격 * 0.9 / else if 멕시코인 할인 - 가격 * 0.85 
     else if 가정의 달 이벤트 - 500ml 콜라 하나 -->
-
+    <div id="text">
+        이벤트를 선택해주세요.<span style="font-size: 15px;">(중복할인은 불가합니다.)</span>
+    </div>
     <div class="event_con">
         <div class="event" style="margin-left: auto;">
-            <img src="media/강대할인.png" width="200px" height="200px" id="knu" onclick="knu_f()">
+            <img src="/media/강대할인.png" width="200px" height="200px" id="knu" onclick="knu_f()">
             <h4 class="knu">강원대생 할인</h4>
         </div>
         <div class="event">
-            <img src="media/mexican.jpg" width="200px" height="200px" id="mexican" onclick="mexican_f()">
+            <img src="/media/mexican.jpg" width="200px" height="200px" id="mexican" onclick="mexican_f()">
             <h4 class="mexican">멕시코인 할인</h4>
         </div>
         <div class="event" style="margin-right: auto;">
-            <img src="media/may.jpg" width="200px" height="200px" id="may" onclick="may_f()">
+            <img src="/media/may.jpg" width="200px" height="200px" id="may" onclick="may_f()">
             <h4 class="may">가정의 달 콜라 증정</h4>
         </div>
     </div>
@@ -156,15 +168,21 @@
         }
         function may_f() {
             localStorage.setItem('event', 3);
-            var cost_e = parseInt(localStorage.getItem('cost'));
-            cost_e = cost_e * 0.9;
+            alert("종료된 이벤트입니다.");
         }   
     </script>
+    
     <div class="navContainer">
         <a herf="project_f(last).html" class="options">메뉴 선택</a>
         <a herf="" class="options" style="color:red ; font-weight:bold">할인 및 이벤트</a>
         <a herf="order.html" class="options">주문접수 완료</a>
     </div>
+    <footer class="footer">
+        <div>
+            &nbsp; 공지사항    |   이용약관    |   개인정보취급방침<br>
+            강원도 춘천시 백령로 25번길 2 1층   |   t.033-252-4416
+        </div>
+    </footer>
 </body>
 
 </html>

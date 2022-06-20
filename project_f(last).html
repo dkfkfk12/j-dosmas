@@ -70,10 +70,18 @@
             vertical-align: bottom ; 
             text-align: right
         }*/
+        .sle h2{
+            padding-bottom: 10px;
+            border-bottom: 1px solid;
+        }
         #events{
             text-decoration: none;
             float: right;
             color: inherit;
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin-right: 40px;
         }
         #events:hover{
             color: red;
@@ -117,6 +125,8 @@
 </head>
 <body>
     <nav>
+        <!-- -->
+      
        <div class="logo">
            <img src="media/도스마스_로고.png" onclick="goHome()">
            <span class="info">회원가입</span>
@@ -169,7 +179,7 @@
        <div class="none">
        </div>
    <!--여기 margin-top이 위랑 아래 띄우는용도 -->
-   <div style="margin-left: 15%;">
+   <div class="sle" style="margin-left: 15%;">
     <h2 style = "font-family: Nanumgothic; margin-top: 12%; margin-bottom: 5%;" > 메뉴 선택 </h2>
 
     <!--메뉴 이미지 -->
@@ -246,7 +256,7 @@
         var sel4 = document.getElementById("etc");
         var etc = sel4.options[sel4.selectedIndex].value;
         localStorage.setItem('etc', etc);
-       
+        
         window.location.href= url;
         
     }

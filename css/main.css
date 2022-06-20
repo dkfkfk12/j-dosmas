@@ -6,7 +6,7 @@ body {font-family: 'Nanum Gothic', sans-serif; width: 100%; height: auto;}
 
 
 /*-------------------------------------드롭다운 메뉴 관련 css-------------------------------------*/
-.logo {margin: 50px 0;  text-align: center;}            
+.logo {margin: 50px 0;  text-align: center;cursor: pointer;}            
 .info {float: right; font-size: 12px; margin-right: 10px;}
 .topMenu {
     margin-left: 10%;

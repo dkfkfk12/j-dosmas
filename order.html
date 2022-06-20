@@ -107,7 +107,16 @@
                 document.getElementById("event").innerHTML = "가정의 달 콜라 증정"
             }
             //결제금액 id 관련 innerHtml
-            var price = parseInt(localStorage.getItem("burito_c")) + parseInt(localStorage.getItem("drink_c")) + parseInt(localStorage.getItem("fries_c")) + parseInt(localStorage.getItem("etc_c"));
+            var price=0;
+            if(parseInt(localStorage.getItem("burito_c"))>1){
+                price = price + parseInt(localStorage.getItem("burito_c"));
+            }if(parseInt(localStorage.getItem("drink_c"))>1){
+                price = price + parseInt(localStorage.getItem("drink_c"));
+            }if(parseInt(localStorage.getItem("fries_c"))>1){
+                price = price + parseInt(localStorage.getItem("fries_c"));
+            }if(parseInt(localStorage.getItem("etc_c"))>1){
+                price = price + parseInt(localStorage.getItem("etc_c"));
+            }
 
 
             var fixedPrice = price * ((100 - sale) * 0.01);
@@ -142,10 +151,10 @@
         <div class="category">
             <span>메뉴:</span>
             <div class="subCategory">
-                <span id="burito">burito</span><br>
-                <span id="drink">drink</span><br>
-                <span id="fries">fries</span><br>
-                <span id="etc">etc</span><br>
+                <span id="burito">미선택</span><br>
+                <span id="drink">미선택</span><br>
+                <span id="fries">미선택</span><br>
+                <span id="etc">미선택</span><br>
             </div>
         </div>
         <p></p>
